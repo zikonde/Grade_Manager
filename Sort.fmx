@@ -1,0 +1,173 @@
+object SortForm: TSortForm
+  Left = 0
+  Top = 0
+  ClientHeight = 480
+  ClientWidth = 640
+  Position = MainFormCenter
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  DesignerMasterStyle = 0
+  object Label1: TLabel
+    Position.X = 64.000000000000000000
+    Position.Y = 103.000000000000000000
+    Size.Width = 96.000000000000000000
+    Size.Height = 17.000000000000000000
+    Size.PlatformDefault = False
+    Text = #22995#21517
+    TabOrder = 0
+  end
+  object Label2: TLabel
+    Position.X = 168.000000000000000000
+    Position.Y = 103.000000000000000000
+    Size.Width = 95.000000000000000000
+    Size.Height = 17.000000000000000000
+    Size.PlatformDefault = False
+    Text = #23398#21495
+    TabOrder = 1
+  end
+  object Label3: TLabel
+    Position.X = 249.000000000000000000
+    Position.Y = 103.000000000000000000
+    Size.Width = 65.000000000000000000
+    Size.Height = 17.000000000000000000
+    Size.PlatformDefault = False
+    Text = #19987#19994
+    TabOrder = 2
+  end
+  object Label4: TLabel
+    Position.X = 344.000000000000000000
+    Position.Y = 103.000000000000000000
+    Size.Width = 41.000000000000000000
+    Size.Height = 17.000000000000000000
+    Size.PlatformDefault = False
+    Text = #29677#32423
+    TabOrder = 3
+  end
+  object Label5: TLabel
+    Position.X = 393.000000000000000000
+    Position.Y = 103.000000000000000000
+    Size.Width = 32.000000000000000000
+    Size.Height = 17.000000000000000000
+    Size.PlatformDefault = False
+    Text = #25968#23398
+    TabOrder = 12
+  end
+  object Label6: TLabel
+    Position.X = 441.000000000000000000
+    Position.Y = 103.000000000000000000
+    Size.Width = 41.000000000000000000
+    Size.Height = 17.000000000000000000
+    Size.PlatformDefault = False
+    Text = #33521#35821
+    TabOrder = 6
+  end
+  object Label7: TLabel
+    Position.X = 490.000000000000000000
+    Position.Y = 103.000000000000000000
+    Size.Width = 41.000000000000000000
+    Size.Height = 17.000000000000000000
+    Size.PlatformDefault = False
+    Text = #35821#25991
+    TabOrder = 5
+  end
+  object Label8: TLabel
+    Position.X = 539.000000000000000000
+    Position.Y = 103.000000000000000000
+    Size.Width = 41.000000000000000000
+    Size.Height = 17.000000000000000000
+    Size.PlatformDefault = False
+    Text = #24179#22343#20998
+    TabOrder = 4
+  end
+  object ReturnButton: TButton
+    Position.X = 8.000000000000000000
+    Position.Y = 8.000000000000000000
+    Size.Width = 33.000000000000000000
+    Size.Height = 25.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 10
+    Text = '<'
+    OnClick = ReturnButtonClick
+  end
+  object StudentListBox: TListBox
+    Position.X = 8.000000000000000000
+    Position.Y = 128.000000000000000000
+    Size.Width = 624.000000000000000000
+    Size.Height = 344.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 11
+    DisableFocusEffect = True
+    DefaultItemStyles.ItemStyle = ''
+    DefaultItemStyles.GroupHeaderStyle = ''
+    DefaultItemStyles.GroupFooterStyle = ''
+    Viewport.Width = 620.000000000000000000
+    Viewport.Height = 340.000000000000000000
+  end
+  object Label9: TLabel
+    Position.X = 96.000000000000000000
+    Position.Y = 48.000000000000000000
+    Size.Width = 33.000000000000000000
+    Size.Height = 25.000000000000000000
+    Size.PlatformDefault = False
+    Text = #25353#65306
+    TabOrder = 16
+  end
+  object NameSortButton: TButton
+    Position.X = 137.000000000000000000
+    Position.Y = 48.000000000000000000
+    Size.Width = 48.000000000000000000
+    Size.Height = 25.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 9
+    Text = #22995#21517
+    OnClick = NameSortButtonClick
+  end
+  object StudentIdSortButton: TButton
+    Position.X = 224.000000000000000000
+    Position.Y = 48.000000000000000000
+    Size.Width = 48.000000000000000000
+    Size.Height = 25.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 8
+    Text = #23398#21495
+    OnClick = StudentIdSortButtonClick
+  end
+  object AvgSortButton: TButton
+    Position.X = 313.000000000000000000
+    Position.Y = 48.000000000000000000
+    Size.Width = 48.000000000000000000
+    Size.Height = 25.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 7
+    Text = #24179#22343#20998
+    OnClick = AvgSortButtonClick
+  end
+  object Label10: TLabel
+    Position.X = 201.000000000000000000
+    Position.Y = 48.000000000000000000
+    Size.Width = 23.000000000000000000
+    Size.Height = 25.000000000000000000
+    Size.PlatformDefault = False
+    Text = #65292
+    TabOrder = 15
+  end
+  object Label11: TLabel
+    Position.X = 282.000000000000000000
+    Position.Y = 48.000000000000000000
+    Size.Width = 23.000000000000000000
+    Size.Height = 25.000000000000000000
+    Size.PlatformDefault = False
+    Text = #65292
+    TabOrder = 14
+  end
+  object Label12: TLabel
+    Position.X = 385.000000000000000000
+    Position.Y = 48.000000000000000000
+    Size.Width = 40.000000000000000000
+    Size.Height = 25.000000000000000000
+    Size.PlatformDefault = False
+    Text = #25490#24207#12290
+    TabOrder = 13
+  end
+end

@@ -1,0 +1,180 @@
+object AddStudentForm: TAddStudentForm
+  Left = 0
+  Top = 0
+  Caption = #36755#20837#23398#29983#35760#24405
+  ClientHeight = 480
+  ClientWidth = 640
+  Position = MainFormCenter
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  DesignerMasterStyle = 0
+  object ReturnButton: TButton
+    Position.X = 8.000000000000000000
+    Position.Y = 8.000000000000000000
+    Size.Width = 33.000000000000000000
+    Size.Height = 25.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 19
+    Text = '<'
+    OnClick = ReturnButtonClick
+  end
+  object NameEdit: TEdit
+    Touch.InteractiveGestures = [LongTap, DoubleTap]
+    TabOrder = 14
+    Position.X = 135.000000000000000000
+    Position.Y = 91.000000000000000000
+    Size.Width = 145.000000000000000000
+    Size.Height = 25.000000000000000000
+    Size.PlatformDefault = False
+  end
+  object Label1: TLabel
+    Position.X = 71.000000000000000000
+    Position.Y = 91.000000000000000000
+    Size.Width = 120.000000000000000000
+    Size.Height = 25.000000000000000000
+    Size.PlatformDefault = False
+    Text = '*'#22995#21517#65306
+    TabOrder = 12
+  end
+  object SaveButton: TButton
+    Position.X = 321.000000000000000000
+    Position.Y = 408.000000000000000000
+    Size.Width = 72.000000000000000000
+    Size.Height = 33.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 0
+    Text = #20445#23384
+    OnClick = SaveButtonClick
+  end
+  object ShapeTransitionEffect1: TShapeTransitionEffect
+    Progress = 30.000000000000000000
+    RandomSeed = 0.300000011920929000
+  end
+  object StudentIdEdit: TEdit
+    Touch.InteractiveGestures = [LongTap, DoubleTap]
+    TabOrder = 13
+    Position.X = 135.000000000000000000
+    Position.Y = 170.000000000000000000
+    Size.Width = 145.000000000000000000
+    Size.Height = 25.000000000000000000
+    Size.PlatformDefault = False
+  end
+  object Label2: TLabel
+    Position.X = 71.000000000000000000
+    Position.Y = 170.000000000000000000
+    Size.Width = 120.000000000000000000
+    Size.Height = 25.000000000000000000
+    Size.PlatformDefault = False
+    Text = '*'#23398#21495#65306
+    TabOrder = 10
+  end
+  object MathEdit: TEdit
+    Touch.InteractiveGestures = [LongTap, DoubleTap]
+    TabOrder = 11
+    Position.X = 439.000000000000000000
+    Position.Y = 91.000000000000000000
+    Size.Width = 145.000000000000000000
+    Size.Height = 25.000000000000000000
+    Size.PlatformDefault = False
+  end
+  object Label3: TLabel
+    Position.X = 391.000000000000000000
+    Position.Y = 91.000000000000000000
+    Size.Width = 120.000000000000000000
+    Size.Height = 25.000000000000000000
+    Size.PlatformDefault = False
+    Text = '*'#25968#23398#65306
+    TabOrder = 8
+  end
+  object EnglishEdit: TEdit
+    Touch.InteractiveGestures = [LongTap, DoubleTap]
+    TabOrder = 9
+    Position.X = 439.000000000000000000
+    Position.Y = 170.000000000000000000
+    Size.Width = 145.000000000000000000
+    Size.Height = 25.000000000000000000
+    Size.PlatformDefault = False
+  end
+  object Label4: TLabel
+    Position.X = 391.000000000000000000
+    Position.Y = 170.000000000000000000
+    Size.Width = 120.000000000000000000
+    Size.Height = 25.000000000000000000
+    Size.PlatformDefault = False
+    Text = '*'#33521#35821#65306
+    TabOrder = 5
+  end
+  object MajorEdit: TEdit
+    Touch.InteractiveGestures = [LongTap, DoubleTap]
+    TabOrder = 7
+    Position.X = 135.000000000000000000
+    Position.Y = 253.000000000000000000
+    Size.Width = 145.000000000000000000
+    Size.Height = 25.000000000000000000
+    Size.PlatformDefault = False
+  end
+  object Label5: TLabel
+    Position.X = 71.000000000000000000
+    Position.Y = 253.000000000000000000
+    Size.Width = 120.000000000000000000
+    Size.Height = 25.000000000000000000
+    Size.PlatformDefault = False
+    Text = '*'#19987#19994#65306
+    TabOrder = 3
+  end
+  object ChineseEdit: TEdit
+    Touch.InteractiveGestures = [LongTap, DoubleTap]
+    TabOrder = 4
+    Position.X = 439.000000000000000000
+    Position.Y = 253.000000000000000000
+    Size.Width = 145.000000000000000000
+    Size.Height = 25.000000000000000000
+    Size.PlatformDefault = False
+  end
+  object Label6: TLabel
+    Position.X = 391.000000000000000000
+    Position.Y = 253.000000000000000000
+    Size.Width = 120.000000000000000000
+    Size.Height = 25.000000000000000000
+    Size.PlatformDefault = False
+    Text = '*'#33521#25991#65306
+    TabOrder = 1
+  end
+  object BanjiEdit: TEdit
+    Touch.InteractiveGestures = [LongTap, DoubleTap]
+    TabOrder = 6
+    Position.X = 135.000000000000000000
+    Position.Y = 325.000000000000000000
+    Size.Width = 145.000000000000000000
+    Size.Height = 25.000000000000000000
+    Size.PlatformDefault = False
+  end
+  object Label7: TLabel
+    Position.X = 71.000000000000000000
+    Position.Y = 325.000000000000000000
+    Size.Width = 120.000000000000000000
+    Size.Height = 25.000000000000000000
+    Size.PlatformDefault = False
+    Text = '*'#29677#32423#65306
+    TabOrder = 2
+  end
+  object ProgressLabel: TLabel
+    Position.X = 103.000000000000000000
+    Position.Y = 408.000000000000000000
+    Size.Width = 177.000000000000000000
+    Size.Height = 17.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 20
+  end
+  object ContinueButton: TButton
+    Position.X = 425.000000000000000000
+    Position.Y = 408.000000000000000000
+    Size.Width = 72.000000000000000000
+    Size.Height = 33.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 21
+    Text = #32487#32493
+    OnClick = ContinueButtonClick
+  end
+end
