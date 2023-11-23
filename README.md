@@ -1,217 +1,256 @@
-1 设计任务
-
-1.1设计目的
-通过程序，让教师用户可以使用账户和密码登陆系统，录入并保存学生成绩，同时实现一些基本功能，进行简单的学生成绩管理，并通过对人机交互界面的完善优化用户的体验。
-
-1.2设计内容
-数据需要教师和学生的信息。
-程序的功能：查看、查找、输入、编辑、修改、删除、排序学生记录，为保证信息安全，还需要登陆以及注销功能。
-界面的设计：登陆界面，主功能界面和进入各项功能后的界面。
-
-2 设计过程
-2.1 程序功能 
-每条学生记录由姓名、学号、专业、班级、数学成绩、语文成绩、英语成绩和	平均成绩构成。
-程序功能如下：		
-
-（1）登陆界面：教师用户通过输入姓名、工号和密码登陆系统。
-
-（2）查看所有学生信息：逐条显示所有学生的各项信息，并提供查找功能。
-
-（3）查找功能：根据输入的姓名或学号查找对应的学生记录，同时输入姓名和学号时只有姓名和学号同时与对应记录相符才会显示学生信息。
-
-（4）输入学生记录：输入学生的姓名、学号、专业、班级和三项成绩，根据三项成绩均值自动生成平均分，形成一条完整学生记录，并保存数据。
-
-（5）修改学生记录：使用查找功能查询到学生信息后可对学生记录进行更改保存。
-
-（6）删除学生记录：使用查找功能查询到学生记录后可选择删除该条记录。
-
-（7）学生成绩排序：可通过按钮选择对学生的姓名、学号、成绩进行排序，通过点击按钮可改变降序、升序的排序方式。
-
-（8）注销：退出教师的账号，回到登陆界面。
-
-2.2 算法原理
-
-（1）查找原理：根据查找的姓名或学号，遍历数组各条数据中此项的值，返回相符数据的编号，若未找到相符数据，返回-1，之后根据返回数据的编号显示对应数据，若为-1，则显示数据不存在。
-
-（2）排序原理：通过定义标志数为1，-1来进行升序降序排序，通过点击按钮使标志数*(-1)来改变数值，从而改变排序方式。
-
-升序排序时，定义参数min为i，将第i条记录要比较的项与第i+1条开始及之后的记录一一比较，找到对应项大于第i条记录的第k条记录，另min=k，并交换第i条记录与第k条记录。之后使i+1再次进行同样操作（i的范围为0到数据条数-1）。降序排序同理。
-
-2.3 程序流程图
-
-
-2.4 程序主要模块或者函数
-
-数据结构：
-
-（1）Person：由姓名(string)和编号(string)构成：
-
-（2）Teacher：继承Person类的数据，并有密码(string)数据。（数据储存		在”Teachers.txt”中)
-
-（3）Course：由名称(string)和分数(double)构成，有静态变量count用于记录课程数。
-
-（4）Student：继承Person类，有班级(string)和专业(string)，由Course生成的数学、语	文、英语三个Course类成员和均分(double)。（储存在”教师名.txt”文件中）
-
-	主要模块：
- 
-（1）Login: 显示登陆界面，在按下登陆按钮后，根据输入的姓名、工号与密码与数据	库(“Teachers.txt”)的数据是否相同来，判断是否允许用户进入主功能界面。
-
-（2）Home: 主功能界面，提供实现各项功能和注销的按钮。并能够通过点击不同按钮	进入对应的模块。
-
-（3）Signout: 在按下注销按钮并确认后返回登陆界面，选择否后留在主界面。
-
-（4）View: 显示查看界面，从登陆后的教师名对应的txt文件中读取学生信息，使用户	可在对话框中输入姓名或学号点击查询功能查询对应的学生，并提供返回按钮点击后返	回主界面。
-
-（5）AddStudent: 显示添加界面，提供对话框输入学生的各项信息，有保存按钮按下	后将数据储存在教师名对应txt文件中，按下继续按钮后清空对话框中的输入内容并可	继续添加数据，并提供返回按钮点击后返回主界面。
-
-（6）Edit: 显示编辑界面，提供查找功能，将学生信息显示在可编辑对话框中可进行修	改，在按下保存按钮后将更改数据储存到对应文件中，并提供返回按钮点击后返	回	主界面。
-
-（7）DeleteStudent: 显示删除界面，提供查找功能，在显示查找到的学生记录后可点击	删除按钮删除此条记录，并提供返回按钮点击后返回主界面。
-
-（8）Sort: 显示排序界面，提供按学号、姓名、平均分排序的按钮，按下后可改变升降	序的排序方式，提供返回按钮点击后返回主界面。
-
-3 软件运行或者测试结果
-
-3.1登陆界面：
-
-
-输入错误的用户名后显示“该用户不存在”：
-
-
-输入错误的密码后显示“密码错误”：
-
-
-
-
-输入错误工号后显示“密码或工号错误“
-
-3.2主功能界面
-
-3.3查看功能
-
-
-输入姓名进行搜索：
-
-输入不对应的姓名和学号进行搜索显示“没有找到该学生”：
-
-姓名和学号对应后显示学生记录：
-
-
-3.4输入功能
-
-输入各项数据后点击保存按钮后保存按钮变灰，继续按钮可使用：
-
-按下继续按钮后聊天框清空，可继续输入数据：
-
-进入查看功能可找到新增的学生记录
-
-
-3.5修改功能
-
-搜索要删除记录的姓名：
-
-对英语成绩进行修改：
-
-
-保存后记录的英语成绩发生了改变：
-
-
-3.6删除功能
-
-搜索要删除对象的姓名：
-
-点击删除按钮删除此条记录：
-
-3.7排序功能
-
-按姓名进行排序：
-
-按学号进行排序：
-
-按平均分进行排序：
-
-3.8注销
-
-选择“是”后返回登陆界面：
-
-
-4 软件设计过程中遇到的问题以及解决办法
-
-问题1：数据保留，想保存数据这样什么时候运行都能看到。
-
-解决方案：创建txt文件写入。
-
-问题2：数据存放位置不明确
-
-解决方案：做path.h头文件，创建文件目录。例如下
-
-需要写入或读取就可以include “path.h”。
-
-问题3：如何识别哪位老师登录了，系统如何将老师个人信息与系统中的相关数据进行匹配和对应。
-
-解决方案：使用了temp.txt文件。
-
-访问过程如下
-
-问题4：从文件里读入数据
-
-解决方案：使用了逗号对数据进行分隔，创建处理数据的函数，把信息放到vector
-
-
-
-问题5：程序优化和数据保护
-
-解决方案：很多地方使用了选择和循环语句判断是否进行数据访问。这样能加快软件运行时间，且保护数据。
-
-问题6：不同函数需要用同一个allStudents类的vector，传递指针或传值太麻烦了
-
-解决方案：使用了一个全局allStudents类vector，这样不用传递。
-
-问题7：student类成员多，一个一个输入输出带来的不便。
-
-解决方案：重载了iostream和fstream的出入输出运算符
-
-问题8：想知道有多少门课
-
-解决方案：抽象化了课程类，增加了count的静态成员,不同硬编码
-
-
-
-问题9：学生升序与降序排序
-
-解决方案：使用了static变量
-
-
-问题10：学生查找
-
-解决方案：创建了查找函数。
-
-
-在创建APP的过程中还遇到了更多细节性的问题，由于过程较为复杂繁琐，此处只展示了主要的问题和解决方案。此外，APP中还存在一些bug需要解决，我们接下来将会继续深入研究。
-
-5 自学内容简述
-
-Embarcadero c++ Builder，用来做GUI。
-
-如何制作文件目录 _mkdir()。
-
-写入和读取文件 fstream。
-
-String 头文件，包括strcmp(), 。
-
-Vector头文件以及其成员函数e.g. front () swap () ，push_back () ，pop_back () ，size () 等等。
-
-sstream以及其成员函数。
-
-iostream和stream输入输出运算符的重载
-
-windows.h 以及其成员函数 e.g. system() , Sleep(), color()。
-
-fmx.h
-
-6 总结
-
-怀着对C++和C语言强烈的兴趣，我选修了这两门课，从对语言和理论知识的不理解，不懂到可以运用它们进行代码编写，从对一个简单代码的看不懂到现在可以独自编码一个程序，在这个过程有痛苦、有快乐、有焦虑、有兴奋，但我学会了很多。C++语言是一种兼容C语⾔⾯向过程和对象的编译语⾔，它的理论性、综合性和实践性都很强，涉及程序设计的思想、方法、语法、算法等很多方面，让人感到很难学。我本身是一名跨专业的学生，但是我想增加知识面，扩展自己更多方面的发展，所以带着对C++浓烈的兴趣坚持了下来，一开始我也会很苦恼，觉得很难，但是当我自己第一次写出一个小程序时，那种开心的感觉无法形容。我听完老师讲的课，有不懂的地方我会课下继续找相关的视频和⽂档去学习，慢慢去理解课上和在编程中遇到的问题，碰到看不懂的东西就多看⼏遍，实在不懂的就去问问同学，就这样一步一步到我现在可以独立编码一个简单的APP。我现在编码的程序中运用的功能和算法较为简单，但整个过程比较繁琐复杂。通过这次程序设计，我又一次对C++语言的理论知识进行了复习和熟悉，尤其是原本不熟练的指针内容。此外，我了解了Embarcadero的使用，学习了界面按钮与功能实现代码连接的方式，并学会了标签、列表框、编辑框等内容的操作和应用。
-
-学习C++语言编程，离不开上机实践。通过编程和上机调试程序，会发现许许多多的问题，无论⼤的还是⼩的，通过解决这些问题，不仅可以检验⾃⼰是否真正的掌握了所学的内容，还可以加深对所学知识的理解，积累编程和调试经验，提⾼⾃⼰的实际编程能⼒。
-本学期通过对C++语言的学习受益匪浅，最后真心感激跟我一起完成课题的同学们和耐心指导我们的李老师，这将是我学习道路上的美好回忆！
+1. Design tasks
+
+	1.1 purpose of design
+
+		Through the program, teachers and users can log in to the system with the account and password to log in, enter and save the students' scores, and at the same time, realize some basic functions, conduct simple student performance management, and optimize the user experience through the improvement of the human-computer interaction interface.
+
+	1.2 design content
+
+	 	Requires information from both teachers and students.
+	 
+	 	Function of the program: view, find, input, edit, modify, delete, and sort student records, in order to ensure information security, also need to login and log out function.
+	 
+		Interface design: login interface, the main function interface, and the interface after entering the main functions.
+
+2. Design Process
+
+	2.1 Program function
+
+		Each student record is composed of the name, student number/ID, major, class, math score, Chinese score, English score, and Average score.
+	
+	 	The program functions are provided as follows:		
+	 
+			（1） Login interface: Teachers log in to the system by entering their name, user ID, and password.
+			
+			（2） View all student information: display the information of all students one by one, and provide the search function.
+			
+			（3） Search function: find the corresponding student record according to the input name or student number. When entering the name and student number at the same time, only the student information will be displayed if the name and student number match with the corresponding record at the same time.
+			
+			（4） Enter the student record: Enter the student's name, student number, major, class, and three scores. The average score is automatically generated according to the average of the three scores to form a complete student record, then save the data.
+			
+			（5） Modify student records: use the search function to change the student records after searching the student information.
+			
+			（6） Delete the student record: use the search function to query the student record and delete the record.
+			
+			（7） Ranking of students' grades: the students' names, student numbers, and scores can be sorted through the click of a button, and the ranking order can be changed by clicking the rank button again.
+			
+			（8）Cancel: quit the teacher's account and return to the login interface.
+
+	2.2 Principle of the algorithm
+
+		(1) Search principle: According to the name or student number of the search, go through the value of this item in each data of the array, and return the number of the consistent data. If the consistent data is not found, return -1, and then display the corresponding data according to the number of the returned data. If it is -1, the data does not exist.
+
+		(2) Sorting principle: by defining the number of flags as 1 and -1 to sort in ascending and descending order, and change the number of flags * (-1), so as to change the sorting method.
+
+			In ascending order, define the parameter min to i, compare the item of the i-th record with the record from and after the (i + 1)-th, find the k record where the corresponding item is greater than the i-th record, min=k, and exchange the i-th record with the k record. Then do the same again  for (i + 1) (i range from 0 to n - 1). The same goes for the descending-order ordering.
+
+	2.3 Program Flowchart
+	
+		<img src="flowchart.png" alt = "Flowchart">
+
+	2.4 Main modules or functions of the program
+		data structure (Objects):
+  
+			（1）Person: Made up of Name (string) and ID Number(string):
+   
+			（2） Teacher: Inherit the data of the **Person class**, and have the Password (string) data. (data storage in the " Teachers.txt" file)
+   
+			（3）Course: Made up of Course name (string) and Score (double), with a static variable count used to record the number of courses.
+   
+			（4）Student: Inherit the **Person class**, including Class (string) and Major (string), three variables of **Course class** (Mathematics, Chinese, and English), and Average Score (double). Student entries are stored in the file of the format "[teacher's name].txt".
+
+
+		 Main modules:
+			（1） Login: Display the login interface. After pressing the login button, the input name, user ID, and password are compared with that in the database (Teachers.txt ) to determine whether the user is allowed to enter the main function interface.
+   
+			（2） Home: Main function interface that provides buttons for various functions and log-off. Go into different modules by clicking the corresponding buttons.
+   
+			（3） Sign out: After pressing the cancel button and confirming, return to the login interface, and select "No" to stay in the Main Menu.
+   
+			（4） View: display the viewing interface to read the student information from the txt file corresponding to the login teacher name to enable the user	You can enter your name or student number in the dialog box and click the query function to query the corresponding students, and provide the return button and click the return	Back to the Main Menu.
+   
+			（5） Add Student: Display the add interface, provide the dialog box to input the students' information, and press the save button. The data is then stored in the txt file of the teacher. After pressing the continue button, the input content is cleared in the dialog box. Continue to add data and click on the return button to return to the Main Menu.
+   
+			（6） Edit: display the editing interface, provide the search function, and display the student information in the editable dialog box for repair. Change, after pressing the save button, store the change data in the corresponding file, and provide the return button, click and return to the Main Menu.
+   
+			（7） Delete Student: Display the delete interface, provide the search function, and can click after displaying the found student records. The Delete button will Delete the current record, and click on the provided return button to return to the Main Menu.
+   
+			（8）Sort: display the sorting interface, provides the button sorted by student number, name, and average score, and can change the drop after pressing	Order sorting mode, providing the return button to return to the Main Menu.
+
+
+3. Software operation or test results
+	3.1 Login interface:
+
+		"This user does not exist" appears after entering the wrong user name.
+	
+		The Password Error appears after entering the wrong password.
+
+		Show "password or ID number incorrect".
+
+	3.2 Main function interface
+	
+	3.3 View function
+
+
+		Enter a name to search for:
+		
+		Enter a different name and student number to search "No student found":
+		
+		After the name and student number:
+
+
+	3.4 Input function
+
+		After entering each data, click the save button and save the button to turn gray. The continue button can be used:
+		
+		After pressing the continue button, the chat box is cleared to continue entering data:
+		
+		Enter the view function to find the new student record
+
+
+	3.5 Modification function
+	
+		Search for the name where you want to delete the record:
+		
+		Modify the English scores:
+		
+		
+		The recorded English scores have changed:
+
+
+	3.6 Delete the function
+	
+		Search for the name of the object to delete:
+		
+		Click the Delete button to delete this record:
+
+	3.7 Sort function
+	
+		Sort them by name:
+		
+		Sort them by student number:
+		
+		Sort them by average score:
+
+	3.8 Logging Out
+	
+		Select Yes and return to the login screen:
+
+
+4. Some Problems encountered in the software design process and solutions
+
+	Problem 1: Data retention, We wanted to save data so you can see it in time.
+	
+	Solution: Create a txt file write.
+	
+	
+	Problem 2: unclear data storage location
+	
+	Solution: Make the path.h header file, then create the file directory. For example
+	
+		#ifndef PATH_H
+		
+		#define PATH H
+		
+		#include <string>
+		
+		#include <fstream>
+		
+		#include <direct.h>
+		
+		
+		std::string path="c:\\学生成绩管理\\”;
+		
+		int makedir(){
+			return _mkdir("c:\\学生成绩管理"); //创硅文件夹
+		}
+		
+		
+		std: :string getCurrentUsername(){
+			std: :string currentUsername;
+		 	std::ifstream file(path+"temp.txt");
+		  	file>>currentUsername;
+			file.close();
+			return currentUsername;
+		    }
+		
+		
+		std::string getPath(){return path;}
+		#endif
+	
+	 
+	 	Need to write or read to include "path.h ”。
+	
+	 		#include "path.h"
+	
+	
+	Problem 3: How to identify which teacher is logged in, and how does the system match and correspond to the teacher's personal information with the relevant data in the system.
+	
+	Solution: Using the temp.txt document.
+	
+	The access process is as follows
+	
+	
+	Problem 4: Read the data from the file
+	
+	Solution: Commas are used to separate the data, create functions that process the data, and put the information into the vector
+	
+	
+	Problem 5: Program optimization and data protection
+	
+	Solution: many places use the selection and loop statements to determine whether to make data access. This speeds up the software runtime and protects the data.
+	
+	
+	Problem 6: Different functions need to use the same allStudents class v ector, it is too troublesome to pass the pointer or the value
+	
+	 Solution: A global allStudents class v ector is used, so that there is no transfer.
+	
+	 
+	Problem 7: student class members, one input and output inconvenience.
+	
+	Solution: Overloaded the in-and-out output operators for iostream and fstream
+	
+	
+	Problem 8: Want to know how many courses there are
+	
+	Solution: abstraction of the course class, add the static members of count, different hard coding
+	
+	
+	Problem 9: Students are ordered in ascending and descending order
+	
+	Solution: The static variable is used
+	
+	
+	Problem 10: Students find up
+	 
+	 Solution: Create the up function.
+	
+	
+		In the process of creating the APP, we also encountered more detailed problems. Due to the complicated and complicated process, only the main problems and solutions are shown here. In addition, there are some bugs to be solved in the APP, and we will continue to study them in depth.
+	
+
+
+5. Brief description of the self-study content
+
+	· Embarcadero c++ Builder, which is used to make a GUI.
+	
+	· How to make the file directory _mkdir().
+	
+	· Write and read the file fstream.
+	
+	· String, Headfiles, including strcmp(),.
+	
+	· Vector The header file and its member function e.g. front() The swap(), push_back(), pop_back(), size(), etc.
+	
+	·sstream And its member functions.
+	
+	·Overloading of the iostream and stream input and output operators
+	
+	·windows. And h and its member function e.g. system(), Sleep(), color()。
+	
+	·fmx.h
+
+
+6 Summary
+
+	With a strong interest in C + + and C language, I took the two courses, from the language and theory knowledge do not understand, do not understand to use them to code, from a simple code to understand to now can code a program alone, in this process have pain, happiness, anxiety, excitement, but I learned a lot. C + + language is a kind of compilation language compatible with C language and oriented to processes and objects. It is highly theoretical, comprehensive, and practical, involving many aspects such as ideas, methods, grammar, and algorithms of programming, which makes people find it difficult to learn. I am a cross-major student, but I want to increase my knowledge and expand my development in more aspects, so I persisted with my strong interest in C + +. In the beginning, I would be very frustrated and find it difficult, but when I wrote a small program for the first time, my happy feeling was indescribable. I made sure I paid attention to the teacher's class, and when I still didn't understand I continued to find relevant videos and documents to learn, I slowly understood the class and the problems in programming. Through this program design, I once again reviewed and got familiar with the theoretical knowledge of C++ language, especially when it came to pointers and OOP. In addition, I learned about the use of Embarcadero, learned about the interface button and function code connection, and learned about the operation and application of tags, list boxes, editing boxes, and other contents.
